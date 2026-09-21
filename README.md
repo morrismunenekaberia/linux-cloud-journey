@@ -19,56 +19,9 @@ build.
 | CPU | Intel Core i7-6600U |
 | RAM | 8 GB |
 | Operating System | Ubuntu 24.04 LTS |
-| Window Manager | i3 |
-| Code Editor | Visual Studio Code |
-| Browser | Brave |
 
 ---
 
-## Initial Ubuntu Setup
-
-After installing a clean Ubuntu system, I installed the following
-software:
-
-### 1. i3
-
-**Purpose:**  
-I installed i3 as my tiling window manager because I wanted a
-lightweight, keyboard-driven desktop workflow.
-
-**What I learned:**  
-i3 manages application windows using a tiling approach instead of
-the traditional floating-window approach.
-
----
-
-### 2. Brave Browser
-
-**Purpose:**  
-I installed Brave for web browsing, documentation, research, and
-accessing development resources.
-
-**What I learned:**  
-Brave is a Chromium-based web browser.
-
----
-
-### 3. Visual Studio Code
-
-**Purpose:**  
-I installed Visual Studio Code as my main code editor.
-
-**What I plan to use it for:**
-
-- Java development
-- Node.js development
-- Git
-- Docker
-- Cloud development
-- Configuration files
-- Markdown documentation
-
----
 
 ## Documentation Method
 
