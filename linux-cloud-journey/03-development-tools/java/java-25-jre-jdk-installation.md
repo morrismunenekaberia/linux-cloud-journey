@@ -25,11 +25,13 @@ Verify:
 ```bash
 java --version
 ```
-
-Expected output will show Java 25:
+output will show Java 25:
 
 ```text
-openjdk 25.x.x
+openjdk 25.0.4.1 2026-08-18
+OpenJDK Runtime Environment (build 25.0.4.1+1-1-24.04.4-Ubuntu)
+OpenJDK 64-Bit Server VM (build 25.0.4.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)
+
 ```
 
 ## 3. Install Java 25 JDK
@@ -49,7 +51,8 @@ javac --version
 Expected:
 
 ```text
-javac 25.x.x
+javac 25.0.4.1
+
 ```
 
 Also verify the runtime:
