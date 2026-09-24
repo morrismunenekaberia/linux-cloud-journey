@@ -1,0 +1,174 @@
+# Starting and Stopping LocalStack
+
+This section covers the basic commands used to start, check, and stop LocalStack.
+
+No AWS services or resources are created in this process.
+
+---
+
+## 1. Start LocalStack
+
+Start LocalStack with:
+
+```bash
+lstk start
+```
+
+This starts the LocalStack Docker container and makes the local AWS environment available.
+
+### Check that it is running
+
+```bash
+docker ps
+```
+
+The LocalStack container should appear with a status similar to:
+
+```text
+Up ... (healthy)
+```
+
+---
+
+## 2. Check LocalStack Health
+
+To check whether LocalStack is responding:
+
+```bash
+curl http://127.0.0.1:4566/_localstack/health
+```
+
+A working LocalStack installation will return information about the LocalStack environment and available AWS services.
+
+---
+
+## 3. View LocalStack Logs
+
+To watch LocalStack logs:
+
+```bash
+lstk logs --follow
+```
+
+Press:
+
+```text
+Ctrl + C
+```
+
+to stop viewing the logs.
+
+**Note:** `Ctrl + C` here only stops viewing the logs. It does not stop LocalStack.
+
+---
+
+## 4. Stop LocalStack
+
+When finished working, stop LocalStack with:
+
+```bash
+lstk stop
+```
+
+This stops the LocalStack environment.
+
+Check Docker:
+
+```bash
+docker ps
+```
+
+The LocalStack container should no longer appear among the running containers.
+
+---
+
+## 5. Start It Again
+
+When you want to continue working another time:
+
+```bash
+lstk start
+```
+
+Then verify:
+
+```bash
+docker ps
+```
+
+---
+
+# Basic Daily Workflow
+
+### Starting your work
+
+```bash
+lstk start
+```
+
+Check:
+
+```bash
+docker ps
+```
+
+Work with LocalStack.
+
+### Finishing your work
+
+```bash
+lstk stop
+```
+
+Check:
+
+```bash
+docker ps
+```
+
+---
+
+# Quick Reference
+
+| Action                  | Command                                         |
+| ----------------------- | ----------------------------------------------- |
+| Start LocalStack        | `lstk start`                                    |
+| Check Docker containers | `docker ps`                                     |
+| Check LocalStack health | `curl http://127.0.0.1:4566/_localstack/health` |
+| View logs               | `lstk logs --follow`                            |
+| Stop viewing logs       | `Ctrl + C`                                      |
+| Stop LocalStack         | `lstk stop`                                     |
+
+## Simple Mental Model
+
+```text
+START
+  │
+  ▼
+lstk start
+  │
+  ▼
+Docker starts LocalStack
+  │
+  ▼
+Local AWS environment is running
+  │
+  │
+  │  Do your work
+  │
+  ▼
+lstk stop
+  │
+  ▼
+LocalStack stops
+```
+
+You can think of it as:
+
+```text
+lstk start  →  Turn the car on
+              ↓
+             Drive
+              ↓
+lstk stop   →  Turn the car off
+```
